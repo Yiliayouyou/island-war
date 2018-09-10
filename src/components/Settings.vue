@@ -24,8 +24,8 @@
                         <div>刷新</div>
                     </div>
                     <div class="edit-blocks">
-                        <div :key="i" v-for="(row, i) in blocksData" class="row">
-                            <div :key="j" v-for="(col, j) in row" class="block" @drop='drop($event)' @dragover='allowDrop($event)'></div>
+                        <div :key="i" v-for="(row, i) in blocksData" class="row" @drop='drop($event)' @dragover='allowDrop($event)'>
+                            <div :key="j" v-for="(col, j) in row" class="block"></div>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="tool-blocks">
                     <div :key="i" v-for="(row, i) in toolData" class="row">
-                        <div :key="j" v-for="(col, j) in row" class="block">
+                        <div :key="j" v-for="(col, j) in row" class="block" @drop='drop($event)' @dragover='allowDrop($event)'>
                             <div draggable="true" class="block-content" @dragstart='drag($event)'>
                                 {{col.data}}
                             </div>
